@@ -1,0 +1,19 @@
+<!-- Indices written at Sun, 8 Apr 2012 11:30:58 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 6 times in query history -->
+    <datastore-index kind="UserRelationship" ancestor="false" source="auto">
+        <property name="isAgent" direction="asc"/>
+        <property name="userId" direction="asc"/>
+        <property name="isAdmin" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 6 times in query history -->
+    <datastore-index kind="UserRelationship" ancestor="false" source="auto">
+        <property name="isAgent" direction="asc"/>
+        <property name="userId" direction="asc"/>
+        <property name="isAdmin" direction="desc"/>
+    </datastore-index>
+
+</datastore-indexes>

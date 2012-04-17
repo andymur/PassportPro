@@ -1,0 +1,3 @@
+# Module passportpro
+# RPC service class, partial path of RPC policy file
+com.appspot.authagentpro.client.GreetingService, 366CD0E5A8132E7C36411EAF862E9F06.gwt.rpc

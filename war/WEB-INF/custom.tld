@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+<tlib-version>1.2</tlib-version>
+<uri>proTags</uri>
+
+	<tag>
+		<description>For Populating Registered Agents of the user</description>
+		<name>agents</name>
+		<tag-class>com.appspot.authagentpro.server.AgentTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>userId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>For Populating Registered Sub-Agents of the user</description>
+		<name>subagents</name>
+		<tag-class>com.appspot.authagentpro.server.SubAgentTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>userId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>For Populating Agent/SubAgent List</description>
+		<name>selectMap</name>
+		<tag-class>com.appspot.authagentpro.server.SelectMapTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>map</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>For Populating Requests</description>
+		<name>requests</name>
+		<tag-class>com.appspot.authagentpro.server.RequestTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>to</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>from</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>page</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>fromto</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+	</tag>
+	
+	<tag>
+		<description>For Populating Relationships</description>
+		<name>userRelationships</name>
+		<tag-class>com.appspot.authagentpro.server.UserRelationshipTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>filter</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>page</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>opposite</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+		<attribute>
+			<name>isAgent</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>	
+		</attribute>
+	</tag>
+	
+	
+	
+</taglib>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<!-- SERVLET CONTEXT -->
+	<context-param>
+		<param-name>errorEmail</param-name>
+		<param-value>admin.passportpro@taheralitravels.com</param-value>
+		<param-name>adminEmail</param-name>
+		<param-value>admin.passportpro@taheralitravels.com</param-value>
+	</context-param>
+
+	<!-- FILTERS -->
+	<filter>	
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.appspot.authagentpro.server.LoginFilter</filter-class>
+		<init-param>
+		</init-param>
+	</filter>
+	
+	<filter>	
+		<filter-name>DeskFilter</filter-name>
+		<filter-class>com.appspot.authagentpro.server.DeskFilter</filter-class>
+		<init-param>
+		</init-param>
+	</filter>
+	<filter>	
+		<filter-name>AdminFilter</filter-name>
+		<filter-class>com.appspot.authagentpro.server.AdminFilter</filter-class>
+		<init-param>
+		</init-param>
+	</filter>
+	
+
+	
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/dashboard/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>DeskFilter</filter-name>
+		<url-pattern>/desk/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>AdminFilter</filter-name>
+		<url-pattern>/desk/admin/*</url-pattern>
+	</filter-mapping>
+
+	
+	<!-- RESTRICTIONS -->
+    <security-constraint>
+        <web-resource-collection>
+            <url-pattern>/dashboard/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+        <web-resource-collection>
+            <url-pattern>/Register/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.appspot.authagentpro.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserDashboard</servlet-name>
+    <servlet-class>com.appspot.authagentpro.server.Redirector</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Save Application</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.SaveApplication</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>FormSubmit</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.ProcessForm</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>AgentCreate</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.CreateAgent</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.appspot.authagentpro.client.Logout</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>GoToDesk</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.GoToDesk</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Add</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.Add</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>Search</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.Search</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SearchForm</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.SearchForm</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CancelRequest</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.manage.CancelRequest</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ApproveRequest</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.manage.ApproveRequest</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RejectRequest</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.manage.RejectRequest</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Breakup</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.manage.BreakUp</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.appspot.authagentpro.servlets.manage.AddUser</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/passportpro/greet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>UserDashboard</servlet-name>
+    <url-pattern>/dashboard/UserDashboard</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Save Application</servlet-name>
+    <url-pattern>/desk/applicationSave.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>FormSubmit</servlet-name>
+    <url-pattern>/Register/submit.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
+    <servlet-name>AgentCreate</servlet-name>
+    <url-pattern>/dashboard/createMaster.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>GoToDesk</servlet-name>
+    <url-pattern>/dashboard/gotodesk.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Add</servlet-name>
+    <url-pattern>/desk/add.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>Search</servlet-name>
+    <url-pattern>/desk/search.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchForm</servlet-name>
+    <url-pattern>/desk/searchForm.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>AddUser</servlet-name>
+    <url-pattern>/desk/admin/adduser.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CancelRequest</servlet-name>
+    <url-pattern>/desk/admin/cancel.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApproveRequest</servlet-name>
+    <url-pattern>/desk/admin/approve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RejectRequest</servlet-name>
+    <url-pattern>/desk/admin/reject.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Breakup</servlet-name>
+    <url-pattern>/desk/admin/breakup.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CancelRequest</servlet-name>
+    <url-pattern>/dashboard/cancel.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ApproveRequest</servlet-name>
+    <url-pattern>/dashboard/approve.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RejectRequest</servlet-name>
+    <url-pattern>/dashboard/reject.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Breakup</servlet-name>
+    <url-pattern>/dashboard/breakup.do</url-pattern>
+  </servlet-mapping>
+
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>PassportPro.jsp</welcome-file>
+  </welcome-file-list>
+
+  <session-config>
+  	<session-timeout>25</session-timeout>
+  </session-config>
+  
+  <!-- ERROR PAGE -->
+  <!-- <error-page> -->
+  <!--	<exception-type>java.lang.Throwable</exception-type> -->
+  <!--	<location>/errorPage.html</location> -->
+  <!-- </error-page> -->
+
+</web-app>

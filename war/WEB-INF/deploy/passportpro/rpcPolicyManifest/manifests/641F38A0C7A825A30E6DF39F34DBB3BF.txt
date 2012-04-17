@@ -1,0 +1,2 @@
+serviceClass: com.appspot.authagentpro.client.GreetingService
+path: 366CD0E5A8132E7C36411EAF862E9F06.gwt.rpc

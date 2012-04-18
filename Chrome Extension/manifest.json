@@ -1,0 +1,21 @@
+{
+   "background_page": "background.html",
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "/js/Jquery/css/excite-bike/jquery-ui-1.8.16.custom.css" ],
+      "js": [ "js/Jquery/js/jquery-1.6.2.min.js", "js/Jquery/js/jquery-ui-1.8.16.custom.min.js", "js/ajaxForm.js", "js/formGetter.js" ],
+      "matches": [ "https://passport.gov.in/pms/OnlineRegistration.jsp", "https://passport.gov.in/pms/Agent_login.jsp", "https://passport.gov.in/pms/OnlineRegistration_Agent.jsp" ],
+      "run_at": "document_idle"
+   }, {
+      "all_frames": true,
+      "css": [ "/js/Jquery/css/excite-bike/jquery-ui-1.8.16.custom.css" ],
+      "js": [ "js/Jquery/js/jquery-1.6.2.min.js", "js/Jquery/js/jquery-ui-1.8.16.custom.min.js", "js/ajaxForm.js", "js/updateSubmit.js" ],
+      "matches": [ "https://passport.gov.in/pms/pool1.jsp?*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Chrome Extension for PassportPro",
+   "name": "PassportPro",
+   "permissions": [ "https://authagentpro.appspot.com/desk/*", "tabs", "http://authagentpro.appspot.com/desk/*","https://passport.gov.in/pms/*"],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.2.0"
+}

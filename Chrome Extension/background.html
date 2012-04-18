@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+ * Copyright (c) 2010 The Chromium Authors. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<html>
+  <head>
+	<script type="text/javascript" src="chrome_ex_oauthsimple.js"></script>
+	<script type="text/javascript" src="chrome_ex_oauth.js"></script>
+    <script type='text/javascript'>
+      // Called when the url of a tab changes.
+      function checkForValidUrl(tabId, changeInfo, tab) {
+        // If its a PassportForm
+        if (tab.url=='https://passport.gov.in/pms/OnlineRegistration.jsp'
+		|| tab.url=='https://passport.gov.in/pms/Agent_login.jsp'
+		) {
+          // ... show the page action.
+          chrome.pageAction.show(tabId);
+		  
+		  /*chrome.tabs.executeScript(tabId, {file:"jquery-1.5.1.min.js"});
+		  chrome.tabs.executeScript(tabId, {file:"jquery-ui-1.8.13.custom.min"});               
+		  chrome.tabs.executeScript(tabId, {file:"formGetter.js"});*/
+                           
+		  //chrome.tabs.executeScript(null,{code:"$('body').append('<input type=\'text\' />');alert(\'Inside Code\');"});
+				
+        }
+      };
+
+      // Listen for any changes to the URL of any tab.
+      chrome.tabs.onUpdated.addListener(checkForValidUrl);
+
+	  //OAuth object
+	  var oauth = ChromeExOAuth.initBackgroundPage({
+						'request_url': 'https://www.google.com/accounts/OAuthGetRequestToken',
+						'authorize_url': 'https://www.google.com/accounts/OAuthAuthorizeToken',
+						'access_url': 'https://www.google.com/accounts/OAuthGetAccessToken',
+						'consumer_key': 'anonymous',
+						'consumer_secret': 'anonymous',
+						'scope': 'https://docs.google.com/feeds/',
+						'app_name': 'Passport Pro'
+});
+
+	function fetchForm(procode){
+		document.write('OAUTHOO!');
+	}
+
+    
+    </script>
+  </head>
+</html>

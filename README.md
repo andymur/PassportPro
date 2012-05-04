@@ -14,7 +14,8 @@ Instructions for a quick start
 ###Other features
 * Search for application forms and create various annexures and formats from the [Search Page](http://authagentpro.appspot.com/desk/Search.jsp)
 * Collaborate with other agents/subagents
-* Collaborate with your colleagues and 
+* Collaborate with your colleagues and coworkers.
+
 ####Uses google account for login
 
 Web App is powered by Google App Engine.

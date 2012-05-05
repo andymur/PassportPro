@@ -1,6 +1,6 @@
 ##PassportPro
 
-This is a web application for authorized passport agents in India to manage their online and offline passsport applications. This app consisits of two components.
+This is a web application for authorized passport agents in India to manage their online and offline passsport applications. This app consisits of two components. One is a GAE web-app and the other is a Google Chrome Extension.
 
 Instructions for a quick start
 

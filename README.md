@@ -20,4 +20,4 @@ Instructions for a quick start
 
 Web App is powered by Google App Engine.
 
-This is an Open Source Project under MIT Licence. You can fork it and send us pull requests.
+This is an Open Source Project under MIT Licence.
